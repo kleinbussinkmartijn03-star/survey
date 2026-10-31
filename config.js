@@ -1,7 +1,7 @@
 // Instellingen van het onderzoek. Alleen dit bestand hoeft u aan te passen.
 // Plak hieronder de Web-app link van uw Google Apps Script (eindigt op /exec).
 window.SURVEY_CONFIG = {
-  endpoint: "",
+  endpoint: "https://script.google.com/macros/s/AKfycbwtnZf6Wy1cmb7Ny9_uDgeuQeFyTBQVj4pjlfibN_gZ0pBPPYVsA40mV6ZWWM5XkHQi7Q/exec",
   claims: {
     A: "Onze boeren ontvangen een extra beloning voor iedere liter melk als ze extra aandacht besteden aan koe, natuur en klimaat.",
     B: "Jelle en Femke Hoekstra nemen deel aan ons zuivelprogramma, waardoor koe, natuur en boer met elkaar in balans zijn. Zo kan jij lekker genieten van duurzamere verse producten uit Nederland. Beter voor iedereen dus!",
