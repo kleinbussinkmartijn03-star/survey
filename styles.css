@@ -90,7 +90,6 @@ img{display:block;max-width:100%;height:auto}
 .claim{position:relative;background:var(--green-soft);border:1.5px solid #B9D3BC;border-radius:12px;padding:14px 16px 14px 48px;margin:0 0 18px}
 .claim .leaf{position:absolute;left:16px;top:15px}
 .claim p{margin:0;color:#24352A;font-size:16px;line-height:1.55}
-.claim-measure{position:absolute;left:-9999px;top:0;visibility:hidden}
 .facts{margin:0;color:#333}
 .facts div{display:flex;gap:6px}
 .facts dt{font-weight:700}

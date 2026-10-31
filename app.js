@@ -37,21 +37,6 @@
     $("sideHint").classList.toggle("is-side", view === "side");
   }
 
-  // The claim box gets the height of the longest claim at the current width,
-  // so the layout below it is identical in all four versions.
-  function equaliseClaimBox() {
-    var box = $("claimBox"), m = $("measure");
-    box.style.minHeight = "";
-    m.style.width = box.getBoundingClientRect().width + "px";
-    var max = 0;
-    for (var i = 0; i < VERSIONS.length; i++) {
-      m.innerHTML = '<p></p>';
-      m.firstChild.textContent = CFG.claims[VERSIONS[i]];
-      max = Math.max(max, m.getBoundingClientRect().height);
-    }
-    box.style.minHeight = Math.ceil(max) + "px";
-  }
-
   function showShop(version) {
     $("start").hidden = true;
     $("shop").hidden = false;
@@ -71,9 +56,6 @@
 
     setupSurvey(version);
 
-    var measure = function () { equaliseClaimBox(); };
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure); else measure();
-    var t; window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(measure, 120); });
     window.scrollTo(0, 0);
   }
 
