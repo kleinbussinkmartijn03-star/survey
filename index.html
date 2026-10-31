@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Hoe lezen mensen voedselverpakkingen?</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232F5D3A'/%3E%3Cpath d='M9 13h14l-2 10H11z' fill='%23FAF7F0'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/nunito-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/nunito-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- START SCREEN -->
+<main id="start" class="start" hidden>
+  <div class="start-card">
+    <h1>Hoe lezen mensen voedselverpakkingen?</h1>
+    <p>Deze korte vragenlijst duurt ongeveer 3 minuten. Deelname is anoniem en vrijwillig, en u kunt op elk moment stoppen. Onderzoek van een student van Hotelschool The Hague.</p>
+    <p class="start-hint">U ziet zo een productpagina van een webwinkel. Bekijk het product rustig en beantwoord daarna de vragen onder de pagina.</p>
+    <button id="startBtn" class="btn btn-primary btn-lg" type="button">Start</button>
+  </div>
+</main>
+
+<!-- PRODUCT PAGE -->
+<div id="shop" hidden>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="logo" aria-label="Dagkorf">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#2F5D3A"/><path d="M8 14h18l-2.4 11.2a2 2 0 0 1-2 1.6h-9.2a2 2 0 0 1-2-1.6z" fill="#FAF7F0"/><path d="M12 14l5-6 5 6" fill="none" stroke="#FAF7F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Dagkorf</span>
+      </a>
+      <nav class="menu"><a>Producten</a><a>Aanbiedingen</a></nav>
+      <div class="search" role="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="text" placeholder="Waar ben je naar op zoek?" aria-label="Zoeken" tabindex="-1" readonly>
+      </div>
+      <div class="basket" aria-label="Winkelmand">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18l-2 11H5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9l4-5 4 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>0,00</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <nav class="crumbs" aria-label="Kruimelpad"><a>Producten</a><span>›</span><a>Zuivel, eieren</a><span>›</span><a>Melk</a></nav>
+
+    <section class="product">
+      <div class="gallery">
+        <div class="main-image"><img id="mainImg" alt="Zijkant van het pak melk" width="1000" height="1250"></div>
+        <div class="thumbs" role="tablist">
+          <button class="thumb" data-view="front" role="tab" type="button"><img id="thumbFront" alt="" width="200" height="250"><span>Voorkant</span></button>
+          <button class="thumb" data-view="side" role="tab" type="button"><img id="thumbSide" alt="" width="200" height="250"><span>Zijkant</span></button>
+        </div>
+      </div>
+
+      <div class="info">
+        <h1 class="title">Weidelicht Volle melk</h1>
+        <p class="unit">1 l • Prijs per liter € 2,19</p>
+        <div class="buy">
+          <p class="price" aria-label="2 euro 19">2<span class="dot">,</span><sup>19</sup></p>
+          <button class="btn btn-primary btn-add" type="button">Voeg toe <span aria-hidden="true">+</span></button>
+        </div>
+        <p class="shelf">Na bezorging <strong>minimaal 4 dagen houdbaar</strong></p>
+        <hr>
+        <h2>Over dit product</h2>
+        <p>Verse volle melk, gepasteuriseerd. Vol en romig van smaak.</p>
+        <div class="claim" id="claimBox">
+          <svg class="leaf" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15" fill="#DCEBDD" stroke="#2F5D3A" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 19l8-8" stroke="#2F5D3A" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <p id="claimText"></p>
+        </div>
+        <dl class="facts">
+          <div><dt>Inhoud:</dt><dd>1 liter</dd></div>
+          <div><dt>Ingrediënten:</dt><dd>volle melk</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="questions" id="vragen">
+      <h2>Vragen</h2>
+      <p class="note">U kunt terug scrollen naar het product terwijl u antwoordt.</p>
+      <div id="formSlot" class="form-slot"></div>
+    </section>
+  </main>
+
+  <footer class="foot">Onderzoek van een student van Hotelschool The Hague</footer>
+</div>
+
+<!-- hidden helper to give the claim box the same height in every version -->
+<div id="measure" class="claim claim-measure" aria-hidden="true"></div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
