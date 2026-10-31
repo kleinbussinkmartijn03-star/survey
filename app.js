@@ -30,6 +30,11 @@
     for (var i = 0; i < thumbs.length; i++) {
       thumbs[i].setAttribute("aria-selected", thumbs[i].getAttribute("data-view") === view ? "true" : "false");
     }
+    var dots = document.querySelectorAll(".dots span");
+    for (var j = 0; j < dots.length; j++) dots[j].className = dots[j].getAttribute("data-dot") === view ? "on" : "";
+    $("prevBtn").disabled = view === "front";
+    $("nextBtn").disabled = view === "side";
+    $("sideHint").classList.toggle("is-side", view === "side");
   }
 
   // The claim box gets the height of the longest claim at the current width,
@@ -53,11 +58,16 @@
     $("claimText").textContent = CFG.claims[version];
     $("thumbFront").src = "assets/img/voorkant.webp";
     $("thumbSide").src = "assets/img/" + SIDE_IMG[version] + ".webp";
-    setView("side", version);
+    setView("front", version);
     var thumbs = document.querySelectorAll(".thumb");
     for (var i = 0; i < thumbs.length; i++) {
       thumbs[i].addEventListener("click", function () { setView(this.getAttribute("data-view"), version); });
     }
+    $("nextBtn").addEventListener("click", function () { setView("side", version); });
+    $("sideHint").addEventListener("click", function () { setView("side", version); });
+    $("prevBtn").addEventListener("click", function () { setView("front", version); });
+    // preload the side image so switching is instant
+    var pre = new Image(); pre.src = "assets/img/" + SIDE_IMG[version] + ".webp";
 
     var url = CFG.forms[version];
     var slot = $("formSlot");
@@ -78,7 +88,17 @@
     window.scrollTo(0, 0);
   }
 
-  var existing = load();
+  // Next participant on a shared device: forget the version and start fresh.
+  $("nextPerson").addEventListener("click", function (e) {
+    e.preventDefault();
+    memory = null;
+    try { localStorage.removeItem(KEY); } catch (err) {}
+    location.replace(location.pathname);
+  });
+
+  // Hidden test option for the researcher: ?v=A, ?v=B, ?v=C or ?v=D shows that version without storing it.
+  var test = (location.search.match(/[?&]v=([ABCD])\b/) || [])[1];
+  var existing = test || load();
   if (existing) {
     showShop(existing);
   } else {

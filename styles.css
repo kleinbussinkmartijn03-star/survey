@@ -52,8 +52,20 @@ img{display:block;max-width:100%;height:auto}
 }
 
 /* gallery */
-.main-image{background:#fff;border-radius:12px;overflow:hidden;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center}
+.main-image{position:relative;background:#fff;border-radius:12px;overflow:hidden;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center}
 .main-image img{width:100%;height:100%;object-fit:contain}
+.nav-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.95);color:var(--green);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.nav-prev{left:8px}.nav-next{right:8px}
+.nav-arrow[disabled]{opacity:0;pointer-events:none}
+.side-hint{position:relative;margin:14px auto 0;display:flex;align-items:center;gap:8px;font:inherit;font-weight:800;font-size:16px;color:#fff;background:var(--green);border:0;border-radius:999px;padding:11px 20px;cursor:pointer;box-shadow:0 4px 14px rgba(47,93,58,.28);white-space:nowrap;animation:nudge 2.4s ease-in-out infinite}
+.side-hint svg{animation:arrow 1.2s ease-in-out infinite}
+.side-hint.is-side{visibility:hidden}
+@keyframes arrow{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+@keyframes nudge{0%,100%{box-shadow:0 4px 14px rgba(47,93,58,.28)}50%{box-shadow:0 4px 22px rgba(47,93,58,.45)}}
+@media (prefers-reduced-motion:reduce){.side-hint,.side-hint svg{animation:none}}
+.dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:7px}
+.dots span{width:8px;height:8px;border-radius:50%;background:#D5CDBC}
+.dots span.on{background:var(--green)}
 .thumbs{display:flex;gap:12px;margin-top:12px;justify-content:center}
 .thumb{font:inherit;background:#fff;border:2px solid var(--line);border-radius:10px;padding:6px 6px 4px;width:96px;cursor:pointer;color:var(--grey);font-size:13px;font-weight:700}
 .thumb img{width:100%;aspect-ratio:4/5;object-fit:contain}
@@ -93,3 +105,5 @@ img{display:block;max-width:100%;height:auto}
 .form-slot iframe{display:block;width:100%;height:1600px;border:0}
 .form-missing{padding:28px;color:var(--grey);text-align:center}
 .foot{text-align:center;color:#8a8a8a;font-size:13px;padding:0 16px 28px}
+.foot p{margin:0 0 6px}
+.next-person{color:#9a9a9a;text-decoration:underline;cursor:pointer;font-size:12px}

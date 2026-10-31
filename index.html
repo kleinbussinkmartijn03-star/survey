@@ -47,7 +47,13 @@
 
     <section class="product">
       <div class="gallery">
-        <div class="main-image"><img id="mainImg" alt="Zijkant van het pak melk" width="1000" height="1250"></div>
+        <div class="main-image">
+          <img id="mainImg" alt="Voorkant van het pak melk" width="1000" height="1250">
+          <button id="prevBtn" class="nav-arrow nav-prev" type="button" aria-label="Vorige afbeelding"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button id="nextBtn" class="nav-arrow nav-next" type="button" aria-label="Volgende afbeelding"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="dots" aria-hidden="true"><span data-dot="front"></span><span data-dot="side"></span></div>
+        </div>
+        <button id="sideHint" class="side-hint" type="button">Bekijk de zijkant <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="thumbs" role="tablist">
           <button class="thumb" data-view="front" role="tab" type="button"><img id="thumbFront" alt="" width="200" height="250"><span>Voorkant</span></button>
           <button class="thumb" data-view="side" role="tab" type="button"><img id="thumbSide" alt="" width="200" height="250"><span>Zijkant</span></button>
@@ -83,7 +89,10 @@
     </section>
   </main>
 
-  <footer class="foot">Onderzoek van een student van Hotelschool The Hague</footer>
+  <footer class="foot">
+    <p>Onderzoek van een student van Hotelschool The Hague</p>
+    <a id="nextPerson" class="next-person" href="#">Volgende deelnemer op dit apparaat</a>
+  </footer>
 </div>
 
 <!-- hidden helper to give the claim box the same height in every version -->
