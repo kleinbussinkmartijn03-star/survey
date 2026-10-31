@@ -3,9 +3,9 @@
 window.SURVEY_CONFIG = {
   endpoint: "https://script.google.com/macros/s/AKfycbwtnZf6Wy1cmb7Ny9_uDgeuQeFyTBQVj4pjlfibN_gZ0pBPPYVsA40mV6ZWWM5XkHQi7Q/exec",
   claims: {
-    A: "Onze boeren ontvangen een extra beloning voor iedere liter melk als ze extra aandacht besteden aan koe, natuur en klimaat.",
+    A: "Onze boeren ontvangen een extra beloning voor iedere liter melk als ze extra aandacht besteden aan koe, natuur en klimaat. Zo werken we samen aan een duurzamere toekomst voor onze melk.",
     B: "Jelle en Femke Hoekstra nemen deel aan ons zuivelprogramma, waardoor koe, natuur en boer met elkaar in balans zijn. Zo kan jij lekker genieten van duurzamere verse producten uit Nederland. Beter voor iedereen dus!",
-    C: "Van iedere liter die wij verkopen, gaat er 2 ct rechtstreeks terug de natuur in middels een natuurfonds. Alle deelnemende boeren kunnen op basis van natuurprestaties aanspraak maken op dat fonds. De boer die het meest doet voor de optimalisatie van de weidevogelstand, ontvangt de meeste vergoeding. Dit systeem is opgezet met Vogelbescherming Nederland en wordt gecontroleerd door de lokale agrarische natuurvereniging."
+    C: "Van iedere liter die wij verkopen, gaat er 2 ct rechtstreeks terug de natuur in middels een natuurfonds. De boer die het meest doet voor de optimalisatie van de weidevogelstand, ontvangt de meeste vergoeding. Dit systeem is opgezet met Vogelbescherming Nederland en wordt gecontroleerd door de lokale agrarische natuurvereniging."
   }
 };
 // Versie D is precies tekst B gevolgd door tekst C.
