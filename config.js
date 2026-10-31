@@ -1,13 +1,7 @@
 // Instellingen van het onderzoek. Alleen dit bestand hoeft u aan te passen.
-// Plak bij elke versie de "Insluiten" (embed) link van het bijbehorende Microsoft Forms formulier.
-// In Forms: Antwoorden verzamelen > Insluiten (</>) > kopieer de link uit src="..." (eindigt op &embed=true).
+// Plak hieronder de Web-app link van uw Google Apps Script (eindigt op /exec).
 window.SURVEY_CONFIG = {
-  forms: {
-    A: "", // Formulier 1
-    B: "", // Formulier 2
-    C: "", // Formulier 3
-    D: ""  // Formulier 4
-  },
+  endpoint: "",
   claims: {
     A: "Onze boeren ontvangen een extra beloning voor iedere liter melk als ze extra aandacht besteden aan koe, natuur en klimaat.",
     B: "Jelle en Femke Hoekstra nemen deel aan ons zuivelprogramma, waardoor koe, natuur en boer met elkaar in balans zijn. Zo kan jij lekker genieten van duurzamere verse producten uit Nederland. Beter voor iedereen dus!",

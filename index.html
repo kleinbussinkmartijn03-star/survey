@@ -85,7 +85,91 @@
     <section class="questions" id="vragen">
       <h2>Vragen</h2>
       <p class="note">U kunt terug scrollen naar het product terwijl u antwoordt.</p>
-      <div id="formSlot" class="form-slot"></div>
+      <form id="survey" class="survey" novalidate>
+        <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <fieldset class="q" id="q-v1" data-name="v1">
+          <legend><span class="q-nr">1</span><span class="q-text">Hoe duidelijk is voor u wat de boeren voor de natuur doen?</span></legend>
+          <div class="scale">
+            <label class="scale-opt"><input type="radio" name="v1" value="1"><span>1</span></label>
+            <label class="scale-opt"><input type="radio" name="v1" value="2"><span>2</span></label>
+            <label class="scale-opt"><input type="radio" name="v1" value="3"><span>3</span></label>
+            <label class="scale-opt"><input type="radio" name="v1" value="4"><span>4</span></label>
+            <label class="scale-opt"><input type="radio" name="v1" value="5"><span>5</span></label>
+          </div>
+          <div class="scale-ends"><span>1 = helemaal niet duidelijk</span><span>5 = heel duidelijk</span></div>
+          <p class="q-error">Kies een antwoord.</p>
+        </fieldset>
+        <fieldset class="q" id="q-v2" data-name="v2">
+          <legend><span class="q-nr">2</span><span class="q-text">Hoe geïnteresseerd bent u om meer te weten over waar deze melk vandaan komt?</span></legend>
+          <div class="scale">
+            <label class="scale-opt"><input type="radio" name="v2" value="1"><span>1</span></label>
+            <label class="scale-opt"><input type="radio" name="v2" value="2"><span>2</span></label>
+            <label class="scale-opt"><input type="radio" name="v2" value="3"><span>3</span></label>
+            <label class="scale-opt"><input type="radio" name="v2" value="4"><span>4</span></label>
+            <label class="scale-opt"><input type="radio" name="v2" value="5"><span>5</span></label>
+          </div>
+          <div class="scale-ends"><span>1 = helemaal niet</span><span>5 = heel erg</span></div>
+          <p class="q-error">Kies een antwoord.</p>
+        </fieldset>
+        <fieldset class="q" id="q-v3" data-name="v3">
+          <legend><span class="q-nr">3</span><span class="q-text">Hoe geloofwaardig vindt u de tekst over deze melk?</span></legend>
+          <div class="scale">
+            <label class="scale-opt"><input type="radio" name="v3" value="1"><span>1</span></label>
+            <label class="scale-opt"><input type="radio" name="v3" value="2"><span>2</span></label>
+            <label class="scale-opt"><input type="radio" name="v3" value="3"><span>3</span></label>
+            <label class="scale-opt"><input type="radio" name="v3" value="4"><span>4</span></label>
+            <label class="scale-opt"><input type="radio" name="v3" value="5"><span>5</span></label>
+          </div>
+          <div class="scale-ends"><span>1 = helemaal niet</span><span>5 = heel erg</span></div>
+          <p class="q-error">Kies een antwoord.</p>
+        </fieldset>
+        <fieldset class="q" id="q-v4" data-name="v4">
+          <legend><span class="q-nr">4</span><span class="q-text">Wie controleert volgens u wat in deze tekst staat?</span></legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="v4" value="De producent zelf"><span>De producent zelf</span></label>
+            <label class="opt"><input type="radio" name="v4" value="Een onafhankelijke organisatie"><span>Een onafhankelijke organisatie</span></label>
+            <label class="opt"><input type="radio" name="v4" value="Niemand"><span>Niemand</span></label>
+            <label class="opt"><input type="radio" name="v4" value="Weet ik niet"><span>Weet ik niet</span></label>
+          </div>
+          <p class="q-error">Kies een antwoord.</p>
+        </fieldset>
+        <fieldset class="q" id="q-v5" data-name="v5">
+          <legend><span class="q-nr">5</span><span class="q-text">Deze melk kost € 2,19 per liter. Vergelijkbare melk zonder deze tekst kost € 1,39. Welke kiest u?</span></legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="v5" value="Deze melk"><span>Deze melk</span></label>
+            <label class="opt"><input type="radio" name="v5" value="De goedkopere melk"><span>De goedkopere melk</span></label>
+          </div>
+          <p class="q-error">Kies een antwoord.</p>
+        </fieldset>
+        <fieldset class="q" id="q-v6" data-name="v6">
+          <legend><span class="q-nr">6</span><span class="q-text">Wat zou u meer vertrouwen geven in een tekst als deze?<span class="q-hint">Meerdere antwoorden mogelijk</span></span></legend>
+          <div class="opts">
+            <label class="opt"><input type="checkbox" name="v6" value="De naam van de boer"><span>De naam van de boer</span></label>
+            <label class="opt"><input type="checkbox" name="v6" value="Een concreet feit of getal"><span>Een concreet feit of getal</span></label>
+            <label class="opt"><input type="checkbox" name="v6" value="Een onafhankelijk keurmerk"><span>Een onafhankelijk keurmerk</span></label>
+            <label class="opt"><input type="checkbox" name="v6" value="Niets, ik vertrouw het al"><span>Niets, ik vertrouw het al</span></label>
+            <label class="opt"><input type="checkbox" name="v6" value="Niets, ik vertrouw zulke teksten nooit"><span>Niets, ik vertrouw zulke teksten nooit</span></label>
+          </div>
+          <p class="q-error">Kies een antwoord.</p>
+        </fieldset>
+        <fieldset class="q" id="q-v7" data-name="v7">
+          <legend><span class="q-nr">7</span><span class="q-text">Hoe vaak let u op duurzaamheid als u eten koopt?</span></legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="v7" value="Nooit"><span>Nooit</span></label>
+            <label class="opt"><input type="radio" name="v7" value="Soms"><span>Soms</span></label>
+            <label class="opt"><input type="radio" name="v7" value="Vaak"><span>Vaak</span></label>
+            <label class="opt"><input type="radio" name="v7" value="Altijd"><span>Altijd</span></label>
+          </div>
+          <p class="q-error">Kies een antwoord.</p>
+        </fieldset>
+        <p id="formError" class="form-error" hidden></p>
+        <button id="sendBtn" class="btn btn-primary btn-lg btn-send" type="submit">Versturen</button>
+      </form>
+      <div id="thanks" class="thanks" hidden>
+        <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#2F5D3A"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Bedankt!</h3>
+        <p>Deze vragenlijst was onderdeel van onderzoek naar hoe biodiversiteitsclaims op voedsel worden begrepen en vertrouwd. De winkel, het product en het merk zijn voor dit onderzoek verzonnen.</p>
+      </div>
     </section>
   </main>
 
