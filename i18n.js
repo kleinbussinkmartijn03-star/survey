@@ -1,0 +1,81 @@
+// English translations. The Dutch text in index.html is the original; this maps it to English.
+// Answers are always saved with the Dutch answer codes, so both languages end up in the same columns.
+window.SURVEY_EN = {
+  title: "How do people read food packaging?",
+  claims: {
+    A: "Our farmers receive an extra reward for every litre of milk when they pay extra attention to cows, nature and the climate. This way we work together towards a more sustainable future for our milk.",
+    B: "Jelle and Femke Hoekstra take part in our dairy programme, so that cow, nature and farmer are in balance with each other. This way you can enjoy more sustainable fresh products from the Netherlands. Better for everyone!",
+    C: "For every litre we sell, 2 cents go straight back to nature through a nature fund. The farmer who does the most to improve the meadow bird population receives the highest payment. This system was set up with the Dutch bird protection society Vogelbescherming Nederland and is checked by the local agricultural nature association."
+  },
+  text: {
+    "Hoe lezen mensen voedselverpakkingen?": "How do people read food packaging?",
+    "Deze korte vragenlijst duurt ongeveer 3 minuten. Deelname is anoniem en vrijwillig, en u kunt op elk moment stoppen. Onderzoek van een student van Hotelschool The Hague.":
+      "This short survey takes about 3 minutes. Participation is anonymous and voluntary, and you can stop at any time. Research by a student of Hotelschool The Hague.",
+    "U ziet zo een productpagina van een webwinkel. Bekijk het product rustig en beantwoord daarna de vragen onder de pagina.":
+      "You will now see a product page of an online shop. Take a good look at the product and then answer the questions below the page.",
+    "Start": "Start",
+    "Producten": "Products",
+    "Aanbiedingen": "Offers",
+    "Waar ben je naar op zoek?": "What are you looking for?",
+    "Zuivel, eieren": "Dairy, eggs",
+    "Melk": "Milk",
+    "Bekijk de zijkant": "View the side",
+    "Voorkant": "Front",
+    "Zijkant": "Side",
+    "Weidelicht Volle melk": "Weidelicht Whole milk",
+    "1 l • Prijs per liter € 2,19": "1 l • Price per litre € 2,19",
+    "Voeg toe": "Add",
+    "Na bezorging": "After delivery",
+    "minimaal 4 dagen houdbaar": "keeps for at least 4 days",
+    "Over dit product": "About this product",
+    "Verse volle melk, gepasteuriseerd. Vol en romig van smaak.": "Fresh whole milk, pasteurised. Full and creamy taste.",
+    "Inhoud:": "Contents:",
+    "1 liter": "1 litre",
+    "Ingrediënten:": "Ingredients:",
+    "volle melk": "whole milk",
+    "Vragen": "Questions",
+    "U kunt terug scrollen naar het product terwijl u antwoordt.": "You can scroll back to the product while you answer.",
+    "Hoe duidelijk is voor u wat de boeren voor de natuur doen?": "How clear is it to you what the farmers do for nature?",
+    "1 = helemaal niet duidelijk": "1 = not clear at all",
+    "5 = heel duidelijk": "5 = very clear",
+    "Hoe geïnteresseerd bent u om meer te weten over waar deze melk vandaan komt?": "How interested are you in knowing more about where this milk comes from?",
+    "1 = helemaal niet": "1 = not at all",
+    "5 = heel erg": "5 = very much",
+    "Hoe geloofwaardig vindt u de informatie over de boeren en de natuur?": "How credible do you find the information about the farmers and nature?",
+    "Wie controleert volgens u wat in deze tekst staat?": "Who do you think checks what this text says?",
+    "De producent zelf": "The producer itself",
+    "Een onafhankelijke organisatie": "An independent organisation",
+    "Niemand": "Nobody",
+    "Weet ik niet": "I don't know",
+    "Deze melk kost € 2,19 per liter. Vergelijkbare melk zonder deze tekst kost € 1,39. Welke kiest u?":
+      "This milk costs € 2,19 per litre. Similar milk without this text costs € 1,39. Which one do you choose?",
+    "Deze melk": "This milk",
+    "De goedkopere melk": "The cheaper milk",
+    "Wat zou u meer vertrouwen geven in een tekst als deze?": "What would give you more trust in a text like this?",
+    "Meerdere antwoorden mogelijk": "Several answers possible",
+    "De naam van de boer": "The name of the farmer",
+    "Een concreet feit of getal": "A concrete fact or number",
+    "Een onafhankelijk keurmerk": "An independent quality label",
+    "Niets, ik vertrouw het al": "Nothing, I already trust it",
+    "Niets, ik vertrouw zulke teksten nooit": "Nothing, I never trust texts like this",
+    "Hoe vaak let u op duurzaamheid als u eten koopt?": "How often do you pay attention to sustainability when you buy food?",
+    "Nooit": "Never",
+    "Soms": "Sometimes",
+    "Vaak": "Often",
+    "Altijd": "Always",
+    "Kies een antwoord.": "Please choose an answer.",
+    "Versturen": "Send",
+    "Bedankt!": "Thank you!",
+    "Deze vragenlijst was onderdeel van onderzoek naar hoe biodiversiteitsclaims op voedsel worden begrepen en vertrouwd. De winkel, het product en het merk zijn voor dit onderzoek verzonnen.":
+      "This survey was part of research on how biodiversity claims on food are understood and trusted. The shop, the product and the brand were made up for this research.",
+    "Onderzoek van een student van Hotelschool The Hague": "Research by a student of Hotelschool The Hague",
+    "Volgende deelnemer op dit apparaat": "Next participant on this device",
+    // messages set from app.js
+    "Bezig met versturen...": "Sending...",
+    "De vragenlijst is nog niet gekoppeld. Probeer het later opnieuw.": "The survey is not connected yet. Please try again later.",
+    "Versturen lukte niet. Controleer uw internetverbinding en probeer het opnieuw.": "Sending did not work. Please check your internet connection and try again.",
+    "Voorkant van het pak melk": "Front of the milk carton",
+    "Zijkant van het pak melk": "Side of the milk carton"
+  }
+};
+window.SURVEY_EN.claims.D = window.SURVEY_EN.claims.B + " " + window.SURVEY_EN.claims.C;

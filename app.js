@@ -4,6 +4,28 @@
   var VERSIONS = ["A", "B", "C", "D"];
   var SIDE_IMG = { A: "zijkant-1", B: "zijkant-2", C: "zijkant-3", D: "zijkant-4" };
   var KEY = "dk_versie";
+  var LANG_KEY = "dk_taal";
+  var EN = window.SURVEY_EN;
+  var lang = "nl";
+  function T(s) { return lang === "en" && EN.text[s] ? EN.text[s] : s; }
+  function claimsFor() { return lang === "en" ? EN.claims : CFG.claims; }
+  function sideImg(version) { return "assets/img/" + (lang === "en" ? "zijkant-en-" : "zijkant-") + SIDE_IMG[version].split("-")[1] + ".webp"; }
+  function applyLang() {
+    document.documentElement.lang = lang;
+    document.title = lang === "en" ? EN.title : "Hoe lezen mensen voedselverpakkingen?";
+    var els = document.querySelectorAll("[data-t]");
+    for (var i = 0; i < els.length; i++) {
+      if (els[i].dataset.nl === undefined) els[i].dataset.nl = els[i].textContent;
+      els[i].textContent = T(els[i].dataset.nl);
+    }
+    var ph = document.querySelectorAll("[data-t-ph]");
+    for (var j = 0; j < ph.length; j++) {
+      if (ph[j].dataset.nl === undefined) ph[j].dataset.nl = ph[j].placeholder;
+      ph[j].placeholder = T(ph[j].dataset.nl);
+    }
+  }
+  function loadLang() { try { var l = localStorage.getItem(LANG_KEY); if (l === "nl" || l === "en") return l; } catch (e) {} return null; }
+  function saveLang(l) { try { localStorage.setItem(LANG_KEY, l); } catch (e) {} }
   var memory = null; // fallback when localStorage is blocked
 
   function load() {
@@ -22,10 +44,10 @@
   var $ = function (id) { return document.getElementById(id); };
 
   function setView(view, version) {
-    var src = view === "front" ? "assets/img/voorkant.webp" : "assets/img/" + SIDE_IMG[version] + ".webp";
+    var src = view === "front" ? "assets/img/voorkant.webp" : sideImg(version);
     var img = $("mainImg");
     img.src = src;
-    img.alt = view === "front" ? "Voorkant van het pak melk" : "Zijkant van het pak melk";
+    img.alt = T(view === "front" ? "Voorkant van het pak melk" : "Zijkant van het pak melk");
     var thumbs = document.querySelectorAll(".thumb");
     for (var i = 0; i < thumbs.length; i++) {
       thumbs[i].setAttribute("aria-selected", thumbs[i].getAttribute("data-view") === view ? "true" : "false");
@@ -38,11 +60,13 @@
   }
 
   function showShop(version) {
+    $("lang").hidden = true;
     $("start").hidden = true;
     $("shop").hidden = false;
-    $("claimText").textContent = CFG.claims[version];
+    applyLang();
+    $("claimText").textContent = claimsFor()[version];
     $("thumbFront").src = "assets/img/voorkant.webp";
-    $("thumbSide").src = "assets/img/" + SIDE_IMG[version] + ".webp";
+    $("thumbSide").src = sideImg(version);
     setView("front", version);
     var thumbs = document.querySelectorAll(".thumb");
     for (var i = 0; i < thumbs.length; i++) {
@@ -52,7 +76,7 @@
     $("sideHint").addEventListener("click", function () { setView("side", version); });
     $("prevBtn").addEventListener("click", function () { setView("front", version); });
     // preload the side image so switching is instant
-    var pre = new Image(); pre.src = "assets/img/" + SIDE_IMG[version] + ".webp";
+    var pre = new Image(); pre.src = sideImg(version);
 
     setupSurvey(version);
 
@@ -111,8 +135,9 @@
         return;
       }
       res.data.versie = version;
+      res.data.taal = lang;
       var btn = $("sendBtn");
-      btn.disabled = true; btn.textContent = "Bezig met versturen...";
+      btn.disabled = true; btn.textContent = T("Bezig met versturen...");
       var done = function () {
         if (!testMode) { try { localStorage.setItem(DONE, "1"); } catch (err) {} }
         showThanks();
@@ -120,13 +145,13 @@
       };
       if (testMode && !testSend) { done(); return; }  // test links never write to the sheet
       if (!CFG.endpoint) {
-        btn.disabled = false; btn.textContent = "Versturen";
-        $("formError").textContent = "De vragenlijst is nog niet gekoppeld. Probeer het later opnieuw.";
+        btn.disabled = false; btn.textContent = T("Versturen");
+        $("formError").textContent = T("De vragenlijst is nog niet gekoppeld. Probeer het later opnieuw.");
         $("formError").hidden = false; return;
       }
       send(res.data).then(done).catch(function () {
-        btn.disabled = false; btn.textContent = "Versturen";
-        $("formError").textContent = "Versturen lukte niet. Controleer uw internetverbinding en probeer het opnieuw.";
+        btn.disabled = false; btn.textContent = T("Versturen");
+        $("formError").textContent = T("Versturen lukte niet. Controleer uw internetverbinding en probeer het opnieuw.");
         $("formError").hidden = false;
       });
     });
@@ -136,21 +161,41 @@
   $("nextPerson").addEventListener("click", function (e) {
     e.preventDefault();
     memory = null;
-    try { localStorage.removeItem(KEY); localStorage.removeItem(DONE); } catch (err) {}
+    try { localStorage.removeItem(KEY); localStorage.removeItem(DONE); localStorage.removeItem(LANG_KEY); } catch (err) {}
     location.replace(location.pathname);
   });
 
-  // Hidden test option for the researcher: ?v=A, ?v=B, ?v=C or ?v=D shows that version without storing it.
+  // Hidden test option for the researcher: ?v=A to ?v=D shows that version without storing it; add &lang=en for English.
   var test = (location.search.match(/[?&]v=([ABCD])\b/) || [])[1];
+  var testLang = (location.search.match(/[?&]lang=(nl|en)\b/) || [])[1];
   var existing = test || load();
-  if (existing) {
-    showShop(existing);
-  } else {
+
+  function showStart() {
+    $("lang").hidden = true;
+    applyLang();
     $("start").hidden = false;
     $("startBtn").addEventListener("click", function () {
       var v = load() || pick();
       save(v);
       showShop(v);
     });
+  }
+
+  if (existing) {
+    lang = testLang || loadLang() || "nl";
+    showShop(existing);
+  } else if (loadLang()) {
+    lang = loadLang();
+    showStart();
+  } else {
+    $("lang").hidden = false;
+    var lb = document.querySelectorAll("[data-lang]");
+    for (var k = 0; k < lb.length; k++) {
+      lb[k].addEventListener("click", function () {
+        lang = this.getAttribute("data-lang");
+        saveLang(lang);
+        showStart();
+      });
+    }
   }
 })();

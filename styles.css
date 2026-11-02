@@ -136,3 +136,7 @@ img{display:block;max-width:100%;height:auto}
 .foot{text-align:center;color:#8a8a8a;font-size:13px;padding:0 16px 28px}
 .foot p{margin:0 0 6px}
 .next-person{color:#9a9a9a;text-decoration:underline;cursor:pointer;font-size:12px}
+.lang-title{font-size:26px;line-height:1.25;margin:0 0 22px;color:var(--green);font-weight:800}
+.lang-title span{display:block;font-size:20px;font-weight:700;color:var(--grey);margin-top:4px}
+.lang-btns{display:grid;gap:12px;justify-items:center}
+.lang-btns .btn{width:100%;max-width:260px}
