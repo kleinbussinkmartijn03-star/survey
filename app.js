@@ -3,13 +3,14 @@
   var CFG = window.SURVEY_CONFIG;
   var VERSIONS = ["A", "B", "C", "D"];
   var SIDE_IMG = { A: "zijkant-1", B: "zijkant-2", C: "zijkant-3", D: "zijkant-4" };
+  var ASSET_V = "?v=20261112c"; // change with every update so browsers never mix old and new files
   var KEY = "dk_versie";
   var LANG_KEY = "dk_taal";
   var EN = window.SURVEY_EN;
   var lang = "nl";
   function T(s) { return lang === "en" && EN.text[s] ? EN.text[s] : s; }
   function claimsFor() { return lang === "en" ? EN.claims : CFG.claims; }
-  function sideImg(version) { return "assets/img/" + (lang === "en" ? "zijkant-en-" : "zijkant-") + SIDE_IMG[version].split("-")[1] + ".webp"; }
+  function sideImg(version) { return "assets/img/" + (lang === "en" ? "zijkant-en-" : "zijkant-") + SIDE_IMG[version].split("-")[1] + ".webp" + ASSET_V; }
   function applyLang() {
     document.documentElement.lang = lang;
     document.title = lang === "en" ? EN.title : "Hoe lezen mensen voedselverpakkingen?";
@@ -44,7 +45,7 @@
   var $ = function (id) { return document.getElementById(id); };
 
   function setView(view, version) {
-    var src = view === "front" ? "assets/img/voorkant.webp" : sideImg(version);
+    var src = view === "front" ? "assets/img/voorkant.webp" + ASSET_V : sideImg(version);
     var img = $("mainImg");
     img.src = src;
     img.alt = T(view === "front" ? "Voorkant van het pak melk" : "Zijkant van het pak melk");
@@ -65,7 +66,7 @@
     $("shop").hidden = false;
     applyLang();
     $("claimText").textContent = claimsFor()[version];
-    $("thumbFront").src = "assets/img/voorkant.webp";
+    $("thumbFront").src = "assets/img/voorkant.webp" + ASSET_V;
     $("thumbSide").src = sideImg(version);
     setView("front", version);
     var thumbs = document.querySelectorAll(".thumb");
@@ -127,7 +128,7 @@
   var testSend = /[?&]echt=1\b/.test(location.search);
 
   function isDone() { try { return localStorage.getItem(DONE) === "1"; } catch (e) { return false; } }
-  function showThanks() { $("survey").hidden = true; $("thanks").hidden = false; document.querySelector(".questions .note").hidden = true; $("progress").hidden = true; $("aboutClaim").hidden = true; }
+  function showThanks() { $("survey").hidden = true; $("thanks").hidden = false; document.querySelector(".questions .note").hidden = true; $("progress").hidden = true; $("aboutClaim").hidden = true; $("vragen").classList.add("done"); }
 
   function collect(form) {
     var data = { versie: null, website: form.website.value }, missing = [];
