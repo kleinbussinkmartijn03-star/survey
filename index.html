@@ -35,31 +35,36 @@
 
 <!-- PRODUCT PAGE -->
 <div id="shop" hidden>
+  <div class="util"><div class="util-inner"><span data-t>Gratis bezorging vanaf € 50</span><span class="util-right"><a data-t>Klantenservice</a><a data-t>Winkels</a></span></div></div>
   <header class="topbar">
     <div class="topbar-inner">
       <a class="logo" aria-label="Dagkorf">
-        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#2F5D3A"/><path d="M8 14h18l-2.4 11.2a2 2 0 0 1-2 1.6h-9.2a2 2 0 0 1-2-1.6z" fill="#FAF7F0"/><path d="M12 14l5-6 5 6" fill="none" stroke="#FAF7F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="36" height="36" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#2F5D3A"/><path d="M8 14h18l-2.4 11.2a2 2 0 0 1-2 1.6h-9.2a2 2 0 0 1-2-1.6z" fill="#FAF7F0"/><path d="M12 14l5-6 5 6" fill="none" stroke="#FAF7F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>Dagkorf</span>
       </a>
-      <nav class="menu"><a data-t>Producten</a><a data-t>Aanbiedingen</a></nav>
       <div class="search" role="search">
-        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <input type="text" placeholder="Waar ben je naar op zoek?" data-t-ph aria-label="Zoeken" tabindex="-1" readonly>
+        <span class="search-btn"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
       </div>
-      <div class="basket" aria-label="Winkelmand">
-        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18l-2 11H5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9l4-5 4 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>0,00</span>
+      <div class="actions">
+        <a class="act act-user"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><span data-t>Inloggen</span></a>
+        <a class="act act-fav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg><span data-t>Favorieten</span></a>
+        <div class="basket" aria-label="Winkelmand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18l-2 11H5z"/><path d="M8 9l4-5 4 5"/></svg><span class="badge" id="basketCount" hidden>0</span><span id="basketTotal">0,00</span></div>
       </div>
     </div>
+    <nav class="cats" aria-label="Categorieën"><div class="cats-inner">
+      <a data-t>Groente, fruit</a><a data-t>Vlees, vis</a><a class="on" data-t>Zuivel, eieren</a><a data-t>Brood, bakkerij</a><a data-t>Dranken</a><a data-t>Voorraadkast</a><a data-t>Diepvries</a><a class="cats-offer" data-t>Aanbiedingen</a>
+    </div></nav>
   </header>
 
   <main class="page">
-    <nav class="crumbs" aria-label="Kruimelpad"><a data-t>Producten</a><span>›</span><a data-t>Zuivel, eieren</a><span>›</span><a data-t>Melk</a></nav>
+    <nav class="crumbs" aria-label="Kruimelpad"><a data-t>Producten</a><span>›</span><a data-t>Zuivel, eieren</a><span>›</span><a data-t>Melk</a><span>›</span><a data-t>Volle melk</a></nav>
 
     <section class="product">
       <div class="gallery">
         <div class="main-image">
           <img id="mainImg" alt="Voorkant van het pak melk" width="1000" height="1250">
+          <button id="zoomBtn" class="zoom-btn" type="button" aria-label="Vergroot afbeelding"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></button>
           <button id="prevBtn" class="nav-arrow nav-prev" type="button" aria-label="Vorige afbeelding"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <button id="nextBtn" class="nav-arrow nav-next" type="button" aria-label="Volgende afbeelding"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="dots" aria-hidden="true"><span data-dot="front"></span><span data-dot="side"></span></div>
@@ -72,13 +77,21 @@
       </div>
 
       <div class="info">
+        <a class="brand">Weidelicht</a>
         <h1 data-t class="title">Weidelicht Volle melk</h1>
         <p data-t class="unit">1 l • Prijs per liter € 2,19</p>
         <div class="buy">
           <p class="price" aria-label="2 euro 19">2<span class="dot">,</span><sup>19</sup></p>
-          <button class="btn btn-primary btn-add" type="button"><span data-t>Voeg toe</span> <span aria-hidden="true">+</span></button>
+          <button id="addBtn" class="btn btn-primary btn-add" type="button"><span data-t>Voeg toe</span> <span aria-hidden="true">+</span></button>
+          <div id="stepper" class="stepper" hidden>
+            <button id="minBtn" type="button" aria-label="Minder">−</button><span id="qty">1</span><button id="plusBtn" type="button" aria-label="Meer">+</button>
+          </div>
+          <button id="favBtn" class="fav-btn" type="button" aria-label="Favoriet" aria-pressed="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg></button>
         </div>
-        <p class="shelf"><span data-t>Na bezorging</span> <strong data-t>minimaal 4 dagen houdbaar</strong></p>
+        <ul class="perks">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6h11v10H2zM13 9h4.5l3.5 3.5V16h-8z"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><span><span data-t>Vandaag besteld,</span> <strong data-t>morgen in huis</strong></span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span><span data-t>Na bezorging</span> <strong data-t>minimaal 4 dagen houdbaar</strong></span></li>
+        </ul>
         <hr>
         <h2 data-t>Over dit product</h2>
         <p data-t>Verse volle melk, gepasteuriseerd. Vol en romig van smaak.</p>
@@ -90,12 +103,32 @@
           <div><dt data-t>Inhoud:</dt><dd data-t>1 liter</dd></div>
           <div><dt data-t>Ingrediënten:</dt><dd data-t>volle melk</dd></div>
         </dl>
+        <div class="acc">
+          <details><summary><span data-t>Voedingswaarden</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <table class="nutri"><caption data-t>Gemiddeld per 100 ml</caption>
+              <tr><th data-t>Energie</th><td>272 kJ (65 kcal)</td></tr>
+              <tr><th data-t>Vetten</th><td>3,6 g</td></tr>
+              <tr class="sub"><th data-t>waarvan verzadigd</th><td>2,4 g</td></tr>
+              <tr><th data-t>Koolhydraten</th><td>4,6 g</td></tr>
+              <tr class="sub"><th data-t>waarvan suikers</th><td>4,6 g</td></tr>
+              <tr><th data-t>Eiwitten</th><td>3,4 g</td></tr>
+              <tr><th data-t>Zout</th><td>0,10 g</td></tr>
+              <tr><th data-t>Calcium</th><td>120 mg</td></tr>
+            </table>
+          </details>
+          <details><summary><span data-t>Allergenen</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p data-t>Bevat: melk (lactose).</p></details>
+          <details><summary><span data-t>Bewaren</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p data-t>Gekoeld bewaren bij maximaal 7 °C. Na openen beperkt houdbaar.</p></details>
+        </div>
       </div>
     </section>
 
     <section class="questions" id="vragen">
-      <h2 data-t>Vragen</h2>
-      <p data-t class="note">U kunt terug scrollen naar het product terwijl u antwoordt.</p>
+      <div class="q-head">
+        <p class="q-kicker" data-t>Onderzoek van een student van Hotelschool The Hague</p>
+        <h2 data-t>Vragen</h2>
+        <p data-t class="note">U kunt terug scrollen naar het product terwijl u antwoordt.</p>
+        <div class="progress" id="progress" aria-hidden="true"><div class="progress-bar"><span id="progressFill"></span></div><span id="progressText"></span></div>
+      </div>
       <form id="survey" class="survey" novalidate>
         <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
         <fieldset class="q" id="q-v1" data-name="v1">
@@ -184,13 +217,24 @@
     </section>
   </main>
 
+  <footer class="shopfoot">
+    <div class="shopfoot-inner">
+      <div><h4 data-t>Klantenservice</h4><a data-t>Veelgestelde vragen</a><a data-t>Bezorgen en afhalen</a><a data-t>Contact</a></div>
+      <div><h4 data-t>Over Dagkorf</h4><a data-t>Onze winkels</a><a data-t>Werken bij</a><a data-t>Pers</a></div>
+      <div><h4 data-t>Bestellen</h4><a data-t>Mijn bestellingen</a><a data-t>Betaalmethoden</a><a data-t>Voorwaarden</a></div>
+    </div>
+    <p class="shopfoot-copy">© 2026 Dagkorf</p>
+  </footer>
   <footer class="foot">
-    <p data-t>Onderzoek van een student van Hotelschool The Hague</p>
     <a data-t id="nextPerson" class="next-person" href="#">Volgende deelnemer op dit apparaat</a>
   </footer>
 </div>
 
 
+<div id="lightbox" class="lightbox" hidden>
+  <button id="lbClose" class="lb-close" type="button" aria-label="Sluiten"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+  <div class="lb-scroll" id="lbScroll"><img id="lbImg" alt=""></div>
+</div>
 <script src="config.js"></script>
 <script src="i18n.js"></script>
 <script src="app.js"></script>

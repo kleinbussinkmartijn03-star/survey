@@ -78,9 +78,47 @@
     // preload the side image so switching is instant
     var pre = new Image(); pre.src = sideImg(version);
 
+    setupShop();
     setupSurvey(version);
 
     window.scrollTo(0, 0);
+  }
+
+  // ---------- Shop behaviour (identical in every version) ----------
+  function setupShop() {
+    var qty = 0;
+    function euro(n) { return n.toFixed(2).replace(".", ","); }
+    function renderBasket() {
+      $("addBtn").hidden = qty > 0;
+      $("stepper").hidden = qty === 0;
+      $("qty").textContent = qty;
+      $("basketCount").hidden = qty === 0;
+      $("basketCount").textContent = qty;
+      $("basketTotal").textContent = euro(qty * 2.19);
+    }
+    $("addBtn").addEventListener("click", function () { qty = 1; renderBasket(); });
+    $("plusBtn").addEventListener("click", function () { if (qty < 9) qty++; renderBasket(); });
+    $("minBtn").addEventListener("click", function () { qty--; renderBasket(); });
+    $("favBtn").addEventListener("click", function () {
+      this.setAttribute("aria-pressed", this.getAttribute("aria-pressed") === "true" ? "false" : "true");
+    });
+
+    // image zoom
+    function openZoom() {
+      $("lbImg").src = $("mainImg").src;
+      $("lbImg").alt = $("mainImg").alt;
+      $("lightbox").hidden = false;
+      document.body.style.overflow = "hidden";
+      var sc = $("lbScroll");
+      var centre = function () { sc.scrollLeft = (sc.scrollWidth - sc.clientWidth) / 2; sc.scrollTop = 0; };
+      if ($("lbImg").complete) centre(); else $("lbImg").onload = centre;
+    }
+    function closeZoom() { $("lightbox").hidden = true; document.body.style.overflow = ""; }
+    $("zoomBtn").addEventListener("click", openZoom);
+    $("mainImg").addEventListener("click", openZoom);
+    $("lbClose").addEventListener("click", closeZoom);
+    $("lbScroll").addEventListener("click", function (e) { if (e.target === this) closeZoom(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeZoom(); });
   }
 
   // ---------- Questions ----------
@@ -89,7 +127,7 @@
   var testSend = /[?&]echt=1\b/.test(location.search);
 
   function isDone() { try { return localStorage.getItem(DONE) === "1"; } catch (e) { return false; } }
-  function showThanks() { $("survey").hidden = true; $("thanks").hidden = false; document.querySelector(".questions .note").hidden = true; }
+  function showThanks() { $("survey").hidden = true; $("thanks").hidden = false; document.querySelector(".questions .note").hidden = true; $("progress").hidden = true; }
 
   function collect(form) {
     var data = { versie: null, website: form.website.value }, missing = [];
@@ -122,9 +160,18 @@
   function setupSurvey(version) {
     var form = $("survey");
     if (isDone() && !testMode) { showThanks(); return; }
+    var total = form.querySelectorAll("fieldset.q").length;
+    function progress() {
+      var n = 0, sets = form.querySelectorAll("fieldset.q");
+      for (var i = 0; i < sets.length; i++) if (sets[i].querySelector("input:checked")) n++;
+      $("progressFill").style.width = (100 * n / total) + "%";
+      $("progressText").textContent = (lang === "en" ? "{n} of {t} answered" : "{n} van {t} beantwoord").replace("{n}", n).replace("{t}", total);
+    }
+    progress();
     form.addEventListener("change", function (e) {
       var fs = e.target.closest("fieldset.q");
       if (fs && fs.querySelector("input:checked")) fs.classList.remove("missing");
+      progress();
     });
     form.addEventListener("submit", function (e) {
       e.preventDefault();
