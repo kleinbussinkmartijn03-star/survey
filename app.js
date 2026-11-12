@@ -127,7 +127,7 @@
   var testSend = /[?&]echt=1\b/.test(location.search);
 
   function isDone() { try { return localStorage.getItem(DONE) === "1"; } catch (e) { return false; } }
-  function showThanks() { $("survey").hidden = true; $("thanks").hidden = false; document.querySelector(".questions .note").hidden = true; $("progress").hidden = true; }
+  function showThanks() { $("survey").hidden = true; $("thanks").hidden = false; document.querySelector(".questions .note").hidden = true; $("progress").hidden = true; $("aboutClaim").hidden = true; }
 
   function collect(form) {
     var data = { versie: null, website: form.website.value }, missing = [];
@@ -160,6 +160,16 @@
   function setupSurvey(version) {
     var form = $("survey");
     if (isDone() && !testMode) { showThanks(); return; }
+    // pointer back to the claim: scroll to the green box and light it up briefly
+    $("backToClaim").addEventListener("click", function () {
+      var box = $("claimBox");
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      box.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+      box.classList.remove("flash");
+      void box.offsetWidth;
+      box.classList.add("flash");
+      setTimeout(function () { box.classList.remove("flash"); }, 3200);
+    });
     var total = form.querySelectorAll("fieldset.q").length;
     function progress() {
       var n = 0, sets = form.querySelectorAll("fieldset.q");

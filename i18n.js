@@ -53,6 +53,8 @@ window.SURVEY_EN = {
     "Mijn bestellingen": "My orders",
     "Betaalmethoden": "Payment methods",
     "Voorwaarden": "Terms and conditions",
+    "De vragen gaan over de tekst in het groene kader bij ‘Over dit product’.": "The questions are about the text in the green box under ‘About this product’.",
+    "Bekijk de tekst opnieuw": "View the text again",
     "Producten": "Products",
     "Aanbiedingen": "Offers",
     "Waar ben je naar op zoek?": "What are you looking for?",
