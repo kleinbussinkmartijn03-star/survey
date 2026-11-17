@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232F5D3A'/%3E%3Cpath d='M9 13h14l-2 10H11z' fill='%23FAF7F0'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/nunito-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/nunito-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=20261112c">
+<link rel="stylesheet" href="styles.css?v=20261117a">
 </head>
 <body>
 
@@ -43,30 +43,30 @@
         <span>Dagkorf</span>
       </a>
       <div class="search" role="search">
-        <input type="text" placeholder="Waar ben je naar op zoek?" data-t-ph aria-label="Zoeken" tabindex="-1" readonly>
+        <input type="text" placeholder="Waar ben je naar op zoek?" data-t-ph aria-label="Zoeken" data-t-aria tabindex="-1" readonly>
         <span class="search-btn"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
       </div>
       <div class="actions">
         <a class="act act-user"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><span data-t>Inloggen</span></a>
         <a class="act act-fav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg><span data-t>Favorieten</span></a>
-        <div class="basket" aria-label="Winkelmand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18l-2 11H5z"/><path d="M8 9l4-5 4 5"/></svg><span class="badge" id="basketCount" hidden>0</span><span id="basketTotal">0,00</span></div>
+        <div class="basket" aria-label="Winkelmand" data-t-aria><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18l-2 11H5z"/><path d="M8 9l4-5 4 5"/></svg><span class="badge" id="basketCount" hidden>0</span><span id="basketTotal">0,00</span></div>
       </div>
     </div>
-    <nav class="cats" aria-label="Categorieën"><div class="cats-inner">
+    <nav class="cats" aria-label="Categorieën" data-t-aria><div class="cats-inner">
       <a data-t>Groente, fruit</a><a data-t>Vlees, vis</a><a class="on" data-t>Zuivel, eieren</a><a data-t>Brood, bakkerij</a><a data-t>Dranken</a><a data-t>Voorraadkast</a><a data-t>Diepvries</a><a class="cats-offer" data-t>Aanbiedingen</a>
     </div></nav>
   </header>
 
   <main class="page">
-    <nav class="crumbs" aria-label="Kruimelpad"><a data-t>Producten</a><span>›</span><a data-t>Zuivel, eieren</a><span>›</span><a data-t>Melk</a><span>›</span><a data-t>Volle melk</a></nav>
+    <nav class="crumbs" aria-label="Kruimelpad" data-t-aria><a data-t>Producten</a><span>›</span><a data-t>Zuivel, eieren</a><span>›</span><a data-t>Melk</a><span>›</span><a data-t>Volle melk</a></nav>
 
     <section class="product">
       <div class="gallery">
         <div class="main-image">
           <img id="mainImg" alt="Voorkant van het pak melk" width="1000" height="1250">
-          <button id="zoomBtn" class="zoom-btn" type="button" aria-label="Vergroot afbeelding"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></button>
-          <button id="prevBtn" class="nav-arrow nav-prev" type="button" aria-label="Vorige afbeelding"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <button id="nextBtn" class="nav-arrow nav-next" type="button" aria-label="Volgende afbeelding"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button id="zoomBtn" class="zoom-btn" type="button" aria-label="Vergroot afbeelding" data-t-aria><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></button>
+          <button id="prevBtn" class="nav-arrow nav-prev" type="button" aria-label="Vorige afbeelding" data-t-aria><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button id="nextBtn" class="nav-arrow nav-next" type="button" aria-label="Volgende afbeelding" data-t-aria><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="dots" aria-hidden="true"><span data-dot="front"></span><span data-dot="side"></span></div>
         </div>
         <button id="sideHint" class="side-hint" type="button"><span data-t>Bekijk de zijkant</span> <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -81,12 +81,12 @@
         <h1 data-t class="title">Weidelicht Volle melk</h1>
         <p data-t class="unit">1 l • Prijs per liter € 2,19</p>
         <div class="buy">
-          <p class="price" aria-label="2 euro 19">2<span class="dot">,</span><sup>19</sup></p>
+          <p class="price" aria-label="2 euro 19" data-t-aria>2<span class="dot">,</span><sup>19</sup></p>
           <button id="addBtn" class="btn btn-primary btn-add" type="button"><span data-t>Voeg toe</span> <span aria-hidden="true">+</span></button>
           <div id="stepper" class="stepper" hidden>
-            <button id="minBtn" type="button" aria-label="Minder">−</button><span id="qty">1</span><button id="plusBtn" type="button" aria-label="Meer">+</button>
+            <button id="minBtn" type="button" aria-label="Minder" data-t-aria>−</button><span id="qty">1</span><button id="plusBtn" type="button" aria-label="Meer" data-t-aria>+</button>
           </div>
-          <button id="favBtn" class="fav-btn" type="button" aria-label="Favoriet" aria-pressed="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg></button>
+          <button id="favBtn" class="fav-btn" type="button" aria-label="Favoriet" data-t-aria aria-pressed="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg></button>
         </div>
         <ul class="perks">
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6h11v10H2zM13 9h4.5l3.5 3.5V16h-8z"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><span><span data-t>Vandaag besteld,</span> <strong data-t>morgen in huis</strong></span></li>
@@ -106,14 +106,14 @@
         <div class="acc">
           <details><summary><span data-t>Voedingswaarden</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
             <table class="nutri"><caption data-t>Gemiddeld per 100 ml</caption>
-              <tr><th data-t>Energie</th><td>272 kJ (65 kcal)</td></tr>
-              <tr><th data-t>Vetten</th><td>3,6 g</td></tr>
-              <tr class="sub"><th data-t>waarvan verzadigd</th><td>2,4 g</td></tr>
-              <tr><th data-t>Koolhydraten</th><td>4,6 g</td></tr>
-              <tr class="sub"><th data-t>waarvan suikers</th><td>4,6 g</td></tr>
-              <tr><th data-t>Eiwitten</th><td>3,4 g</td></tr>
-              <tr><th data-t>Zout</th><td>0,10 g</td></tr>
-              <tr><th data-t>Calcium</th><td>120 mg</td></tr>
+              <tr><th data-t>Energie</th><td data-t>272 kJ (65 kcal)</td></tr>
+              <tr><th data-t>Vetten</th><td data-t>3,6 g</td></tr>
+              <tr class="sub"><th data-t>waarvan verzadigd</th><td data-t>2,4 g</td></tr>
+              <tr><th data-t>Koolhydraten</th><td data-t>4,6 g</td></tr>
+              <tr class="sub"><th data-t>waarvan suikers</th><td data-t>4,6 g</td></tr>
+              <tr><th data-t>Eiwitten</th><td data-t>3,4 g</td></tr>
+              <tr><th data-t>Zout</th><td data-t>0,10 g</td></tr>
+              <tr><th data-t>Calcium</th><td data-t>120 mg</td></tr>
             </table>
           </details>
           <details><summary><span data-t>Allergenen</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><p data-t>Bevat: melk (lactose).</p></details>
@@ -236,11 +236,11 @@
 
 
 <div id="lightbox" class="lightbox" hidden>
-  <button id="lbClose" class="lb-close" type="button" aria-label="Sluiten"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+  <button id="lbClose" class="lb-close" type="button" aria-label="Sluiten" data-t-aria><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
   <div class="lb-scroll" id="lbScroll"><img id="lbImg" alt=""></div>
 </div>
-<script src="config.js?v=20261112c"></script>
-<script src="i18n.js?v=20261112c"></script>
-<script src="app.js?v=20261112c"></script>
+<script src="config.js?v=20261117a"></script>
+<script src="i18n.js?v=20261117a"></script>
+<script src="app.js?v=20261117a"></script>
 </body>
 </html>

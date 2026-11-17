@@ -64,7 +64,7 @@ window.SURVEY_EN = {
     "Voorkant": "Front",
     "Zijkant": "Side",
     "Weidelicht Volle melk": "Weidelicht Whole milk",
-    "1 l • Prijs per liter € 2,19": "1 l • Price per litre € 2,19",
+    "1 l • Prijs per liter € 2,19": "1 l • Price per litre € 2.19",
     "Voeg toe": "Add",
     "Na bezorging": "After delivery",
     "minimaal 4 dagen houdbaar": "keeps for at least 4 days",
@@ -89,7 +89,7 @@ window.SURVEY_EN = {
     "Niemand": "Nobody",
     "Weet ik niet": "I don't know",
     "Deze melk kost € 2,19 per liter. Vergelijkbare melk zonder deze tekst kost € 1,39. Welke kiest u?":
-      "This milk costs € 2,19 per litre. Similar milk without this text costs € 1,39. Which one do you choose?",
+      "This milk costs € 2.19 per litre. Similar milk without this text costs € 1.39. Which one do you choose?",
     "Deze melk": "This milk",
     "De goedkopere melk": "The cheaper milk",
     "Wat zou u meer vertrouwen geven in een tekst als deze?": "What would give you more trust in a text like this?",
@@ -116,7 +116,14 @@ window.SURVEY_EN = {
     "De vragenlijst is nog niet gekoppeld. Probeer het later opnieuw.": "The survey is not connected yet. Please try again later.",
     "Versturen lukte niet. Controleer uw internetverbinding en probeer het opnieuw.": "Sending did not work. Please check your internet connection and try again.",
     "Voorkant van het pak melk": "Front of the milk carton",
-    "Zijkant van het pak melk": "Side of the milk carton"
+    "Zijkant van het pak melk": "Side of the milk carton",
+    "Zoeken": "Search", "Winkelmand": "Basket", "Vergroot afbeelding": "Enlarge image", "Vorige afbeelding": "Previous image", "Volgende afbeelding": "Next image", "Favoriet": "Favourite", "Sluiten": "Close",
+    "Categorieën": "Categories",
+    "Kruimelpad": "Breadcrumb",
+    "2 euro 19": "2 euros 19",
+    "Minder": "Less",
+    "Meer": "More",
+    "3,6 g": "3.6 g", "2,4 g": "2.4 g", "4,6 g": "4.6 g", "3,4 g": "3.4 g", "0,10 g": "0.10 g"
   }
 };
 window.SURVEY_EN.claims.D = window.SURVEY_EN.claims.B + " " + window.SURVEY_EN.claims.C;

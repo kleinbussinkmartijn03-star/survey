@@ -3,13 +3,14 @@
   var CFG = window.SURVEY_CONFIG;
   var VERSIONS = ["A", "B", "C", "D"];
   var SIDE_IMG = { A: "zijkant-1", B: "zijkant-2", C: "zijkant-3", D: "zijkant-4" };
-  var ASSET_V = "?v=20261112c"; // change with every update so browsers never mix old and new files
+  var ASSET_V = "?v=20261117a"; // change with every update so browsers never mix old and new files
   var KEY = "dk_versie";
   var LANG_KEY = "dk_taal";
   var EN = window.SURVEY_EN;
   var lang = "nl";
   function T(s) { return lang === "en" && EN.text[s] ? EN.text[s] : s; }
   function claimsFor() { return lang === "en" ? EN.claims : CFG.claims; }
+  function frontImg() { return "assets/img/" + (lang === "en" ? "voorkant-en" : "voorkant") + ".webp" + ASSET_V; }
   function sideImg(version) { return "assets/img/" + (lang === "en" ? "zijkant-en-" : "zijkant-") + SIDE_IMG[version].split("-")[1] + ".webp" + ASSET_V; }
   function applyLang() {
     document.documentElement.lang = lang;
@@ -19,6 +20,13 @@
       if (els[i].dataset.nl === undefined) els[i].dataset.nl = els[i].textContent;
       els[i].textContent = T(els[i].dataset.nl);
     }
+    var ar = document.querySelectorAll("[data-t-aria]");
+    for (var m = 0; m < ar.length; m++) {
+      if (ar[m].dataset.nl === undefined) ar[m].dataset.nl = ar[m].getAttribute("aria-label");
+      ar[m].setAttribute("aria-label", T(ar[m].dataset.nl));
+    }
+    var dot = document.querySelector(".price .dot");
+    if (dot) dot.textContent = lang === "en" ? "." : ",";
     var ph = document.querySelectorAll("[data-t-ph]");
     for (var j = 0; j < ph.length; j++) {
       if (ph[j].dataset.nl === undefined) ph[j].dataset.nl = ph[j].placeholder;
@@ -45,7 +53,7 @@
   var $ = function (id) { return document.getElementById(id); };
 
   function setView(view, version) {
-    var src = view === "front" ? "assets/img/voorkant.webp" + ASSET_V : sideImg(version);
+    var src = view === "front" ? frontImg() : sideImg(version);
     var img = $("mainImg");
     img.src = src;
     img.alt = T(view === "front" ? "Voorkant van het pak melk" : "Zijkant van het pak melk");
@@ -66,7 +74,7 @@
     $("shop").hidden = false;
     applyLang();
     $("claimText").textContent = claimsFor()[version];
-    $("thumbFront").src = "assets/img/voorkant.webp" + ASSET_V;
+    $("thumbFront").src = frontImg();
     $("thumbSide").src = sideImg(version);
     setView("front", version);
     var thumbs = document.querySelectorAll(".thumb");
@@ -88,7 +96,7 @@
   // ---------- Shop behaviour (identical in every version) ----------
   function setupShop() {
     var qty = 0;
-    function euro(n) { return n.toFixed(2).replace(".", ","); }
+    function euro(n) { var s = n.toFixed(2); return lang === "en" ? s : s.replace(".", ","); }
     function renderBasket() {
       $("addBtn").hidden = qty > 0;
       $("stepper").hidden = qty === 0;
