@@ -3,7 +3,7 @@
   var CFG = window.SURVEY_CONFIG;
   var VERSIONS = ["A", "B", "C", "D"];
   var SIDE_IMG = { A: "zijkant-1", B: "zijkant-2", C: "zijkant-3", D: "zijkant-4" };
-  var ASSET_V = "?v=20261117a"; // change with every update so browsers never mix old and new files
+  var ASSET_V = "?v=20261117b"; // change with every update so browsers never mix old and new files
   var KEY = "dk_versie";
   var LANG_KEY = "dk_taal";
   var EN = window.SURVEY_EN;
@@ -25,6 +25,8 @@
       if (ar[m].dataset.nl === undefined) ar[m].dataset.nl = ar[m].getAttribute("aria-label");
       ar[m].setAttribute("aria-label", T(ar[m].dataset.nl));
     }
+    var bt = document.getElementById("basketTotal");
+    if (bt && /^0[.,]00$/.test(bt.textContent)) bt.textContent = lang === "en" ? "0.00" : "0,00";
     var dot = document.querySelector(".price .dot");
     if (dot) dot.textContent = lang === "en" ? "." : ",";
     var ph = document.querySelectorAll("[data-t-ph]");
